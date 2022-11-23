@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .container {
+        margin: 0 80px ;
+    }
+</style>
+<body>
+    <div class="new">
+        <div class="container">
+       
+            <select name="cricket" id="cricket" onchange="app(this.value);">
+                <option value="">Select</option>
+                <option value="1">Australia</option>
+                <option value="b"><span>South</span></option>
+                <option value="3">India</option>               
+            </select>
+            <div class="cric_err"><span style="color:red; display:none;">SELECT cricket</span></div>
+            <br><br>
+            <select name="" id="teams">
+                <option value=""></option>
+                <option value="A">Ateam</option>
+                <option value="B">bteam</option>
+                <option value="C">cteam</option>
+            </select>
+            <span id="team_err" style="color:red; display:none;">This field required</span>
+            <br><br>
+            <button type="submit" onclick="validation()">Submit</button>
+         
+            <div id="result"></div>
+        </div>
+    </div>
+    <script src="new.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #bgbox {
+      background: red;
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+  <body>
+    <p>skjdhfjsdhfjdhsf</p>
+
+    <div id="demo"></div>
+
+    <div id="bgbox">
+      <button onclick="goback()" id="btngo">&times;</button>
+      <button onclick="goforw()" id="btngoforw" style="display: none">
+        go
+      </button>
+    </div>
+
+    <script>
+      function goback() {
+        document.getElementById("bgbox").style.width = "0px";
+        document.getElementById("btngo").style.display = "none";
+        document.getElementById("btngoforw").style.display = "block";
+      }
+      function goforw() {
+        document.getElementById("bgbox").style.width = "300px";
+        document.getElementById("btngoforw").style.display = "none";
+        document.getElementById("btngo").style.display = "block";
+      }
+
+      const XHR = new XMLHttpRequest();
+      const url = "https://api.github.com/zen";
+
+      XHR.onreadystatechange = () => {
+        if (XHR.readyState == 4) {
+          //console.log(XHR.responseText);
+          document.getElementById("demo").innerHTML = this.responseText;
+        }
+      };
+      XHR.open("GET", url);
+      XHR.send();
+    </script>
+  </body>
+</html>
